@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسالة خاصة</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 80%;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #2563eb; }
+        #messageSection { display: none; text-align: right; line-height: 1.8; }
+        .error { color: #f87171; font-size: 0.9rem; margin-top: 5px; display: none; }
+        .heart { color: #f87171; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="loginBox">
+    <h2>ادخل كلمة السر لرؤية الرسالة</h2>
+    <input type="text" id="passwordInput" placeholder="DD/MM/YYYY">
+    <br>
+    <button onclick="checkPassword()">دخول</button>
+    <p id="errorMsg" class="error">كلمة السر غلط يا صاحبي، حاول تاني</p>
+</div>
+
+<div class="container" id="messageSection">
+    <h3 style="text-align: center;">يا صاحبي يا أعز الناس على قلبي <span class="heart">❤️</span></h3>
+    <p>
+        بص بقى يمكن أنا مش دايماً بعرف أعبر بس وجودك في حياتي فرق معايا بجد، أنت مش مجرد صاحب بخرج معاه وبنهزر وخلاص أنت أخويا اللي الظروف اختارته ليا.
+        <br><br>
+        معاك الضحكة بتيجي من غير مجهود والكلام بيطلع من غير تفكير ومفيش أي تصنع ولا مجاملة، فاكر كل المواقف اللي عدت علينا الضحك اللي كان بيخلينا نموت من الهزار والكلام في نص الليل عن أحلامنا وخططنا وحتى اللحظات اللي كنا فيها متضايقين بس واقفين جنب بعض.
+        <br><br>
+        أنت دايماً سند حتى لو مش بتقول كلام كبير وجودك لوحده أمان.. لو في يوم الدنيا ضغطت عليك افتكر إن عندك حد مستعد يسمعك من غير ما يحكم عليك ويفضل جنبك لحد ما تبتسم تاني.
+        <br><br>
+        ولو أنا زعلتك في يوم من غير قصد اعرف إن عمري ما هقبل أخسرك عشان أي حاجة تافهة.. ربنا يديم ضحكتك في حياتي ويفضل طريقنا ماشيين فيه سوا مهما حصل. 
+        <br><br>
+        بحبك يا صاحبي ومهما الأيام لفت بينا أنت ثابت في قلبي ومكانك محفوظ.
+    </p>
+</div>
+
+<script>
+    function checkPassword() {
+        const pass = document.getElementById('passwordInput').value;
+        const correctPass = "17/11/2025";
+        
+        if (pass === correctPass) {
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('messageSection').style.display = 'block';
+        } else {
+            document.getElementById('errorMsg').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
